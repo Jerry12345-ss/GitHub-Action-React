@@ -28,7 +28,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifact
-        uses: action/download-artifact@v3
+        uses: actions/download-artifact@v3
         with:
           name: production
           path: ./dist
