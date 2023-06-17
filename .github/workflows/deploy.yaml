@@ -17,21 +17,21 @@ jobs:
         run: npm install
       - name: Build Project
         run: npm run build
-      - name: Upload artifact in order to deploy
-        uses: actions/upload-artifact@v3
-        with:
-          name: production
-          path: ./dist
+      # - name: Upload artifact in order to deploy
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: production
+      #     path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production
-          path: ./dist
+      # - name: Download artifact
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: production
+      #     path: ./dist
       - name: rsync deployments
         uses: burnett01/rsync-deployments@6.0.0
         with:
