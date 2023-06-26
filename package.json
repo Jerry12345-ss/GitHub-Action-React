@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://www.huocalm.com/react",
+  "homepage": "https://www.huocalm.com/react/build",
   "eslintConfig": {
     "extends": [
       "react-app",
