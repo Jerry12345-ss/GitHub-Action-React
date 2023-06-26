@@ -1,7 +1,8 @@
+import MyNew from "./NewExample/MyNew";
 export default function App(){
   return(
-    <>
-      <h1>Hello World</h1>
-    </>
+    <div style={{ padding : '0 25px'}}>
+      <MyNew/>
+    </div>
   );
 }
