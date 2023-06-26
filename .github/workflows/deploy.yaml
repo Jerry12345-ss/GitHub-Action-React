@@ -28,18 +28,6 @@ jobs:
       #   run: npm test
       - name: List GitHub Workspace
         run: ls $GITHUB_WORKSPACE
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      # - name: Download artifact
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: production-files
-      #     path: ./dist
-      - name: List GitHub Workspace
-        run: ls $GITHUB_WORKSPACE
       - name: rsync deployments
         uses: burnett01/rsync-deployments@6.0.0
         with:
@@ -49,5 +37,27 @@ jobs:
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_user: ${{ secrets.DEPLOY_USER }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+      # - name: Download artifact
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: production-files
+      #     path: ./dist
+      # - name: List GitHub Workspace
+      #   run: ls $GITHUB_WORKSPACE
+      # - name: rsync deployments
+      #   uses: burnett01/rsync-deployments@6.0.0
+      #   with:
+      #     switches: -avzr --delete
+      #     path: build
+      #     remote_path: /var/www/html/react
+      #     remote_host: ${{ secrets.DEPLOY_HOST }}
+      #     remote_user: ${{ secrets.DEPLOY_USER }}
+      #     remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
 
