@@ -26,6 +26,8 @@ jobs:
         run: ls
       # - name: Test
       #   run: npm test
+      - name: List GitHub Workspace
+        run: ls $GITHUB_WORKSPACE
 
   deploy:
     runs-on: ubuntu-latest
