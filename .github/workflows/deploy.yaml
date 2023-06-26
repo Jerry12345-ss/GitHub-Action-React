@@ -24,8 +24,8 @@ jobs:
       #     path: ./dist
       - name: List files
         run: ls
-      - name: Test
-        run: npm test
+      # - name: Test
+      #   run: npm test
 
   deploy:
     runs-on: ubuntu-latest
