@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Error from './Page/Error';
 import StyleNavbar from './StyleNavbar';
@@ -8,7 +8,7 @@ import Service from './Service';
 
 export default function MyNew(){
     return (
-        <HashRouter>
+        <BrowserRouter basename='/react'>
             <Routes>
                 <Route path='/' element={<StyleNavbar/>}>
                     <Route index element={<Home/>}></Route>
@@ -23,6 +23,6 @@ export default function MyNew(){
                 </Route>
                 <Route path='*' element={<Error/>}></Route>
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     );
 }
