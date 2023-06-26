@@ -40,7 +40,7 @@ jobs:
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avzr --delete
-          path: ./build
+          path: build
           remote_path: /var/www/html/react
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_user: ${{ secrets.DEPLOY_USER }}
